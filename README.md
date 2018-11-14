@@ -6,10 +6,12 @@ This library was created from the example program SPIRamSimple.ino, created by J
 Sample program to use a Serial SRAM chip to expand memory for an Arduino Uno giving access to an additional 128kB of random access memory.  The 23LC1024 uses the Serial Peripheral Interface (SPI) to transfer data and commands between the UNO and the memory chip.  Note that the functions could be extracted as a beginning for a library for this chip. [This is one such library - DD].
    
    Used the following components:
+   
    (1) Arduino Uno
+   
    (2) Microchip 23LC1024 SPI SRAM chip soldered on an Arduino Protoshield
 
-!Function Properties:
+Function Properties:
 
     void SetMode(byte CSpin, char Mode);
     void WriteByte(uint32_t address, byte data_byte);
