@@ -32,7 +32,6 @@ SRAMsimple sram;       //initialize an instance of this class
 /*******  Set up code to define variables and start the SCI and SPI serial interfaces  *****/
 void setup()
 {
-  Serial.begin(9600); 
   uint32_t address = 0;                       // create a 32 bit variable to hold the address (uint32_t=long)
   Serial.begin(9600);                         // set communication speed for the serial monitor
   SPI.begin();                                // start communicating with the memory chip
