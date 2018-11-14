@@ -11,6 +11,18 @@
    Used the following components:
    (1) Arduino Uno
    (2) Microchip 23LC1024 SPI SRAM chip soldered on an Arduino Protoshield
+   
+   Wiring:
+   23LC1024 - Uno:
+   ---------------
+   Pin1 (JSC) -- Pin 10 (CS)
+   Pin2 (SO)  -- Pin 12 (MISO) (10K pullup to +5V)
+   Pin3 (NU)  -- 10K pullup to +5V
+   Pin4 (GND) -- GND
+   Pin5 (SI)  -- Pin 11 (MOSI)
+   Pin6 (SCK) -- Pin 13 (SCK)
+   Pin7 (HOLD) -- 10K pullup to +5V
+   Pin8 (V+)  -- +5V
 */
 #include <SRAMsimple.h>
 
