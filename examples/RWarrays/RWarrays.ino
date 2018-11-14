@@ -48,7 +48,6 @@ float read_data_f[5];                         // array to hold data read from me
 
 void setup()
 {
-  Serial.begin(9600); 
   uint32_t address = 0;                       // create a 32 bit variable to hold the address (uint32_t=long)
   byte value;                                 // create variable to hold the data value read
   byte data;                                  // create variable to hold the data value sent
