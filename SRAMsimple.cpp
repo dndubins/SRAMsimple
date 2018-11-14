@@ -242,7 +242,7 @@ long SRAMsimple::ReadLong(uint32_t address){
     temp[i] = SPI.transfer(0x00);                 // read the data byte
   }
   digitalWrite(CS, HIGH);                         // set SPI slave select HIGH
-  data=((long)temp[0]<<24)+((long)temp[1]<<16)+((long)temp[2]<<8)+temp[3];   // reassemble bytes into integer
+  data=((long)temp[0]<<24)+((long)temp[1]<<16)+((long)temp[2]<<8)+temp[3];   // reassemble bytes into long
   return data;
 }
 
@@ -316,7 +316,7 @@ unsigned long SRAMsimple::ReadUnsignedLong(uint32_t address){
     temp[i] = SPI.transfer(0x00);                 // read the data byte
   }
   digitalWrite(CS, HIGH);                         // set SPI slave select HIGH
-  data=((long)temp[0]<<24)+((long)temp[1]<<16)+((long)temp[2]<<8)+temp[3];   // reassemble bytes into integer
+  data=((long)temp[0]<<24)+((long)temp[1]<<16)+((long)temp[2]<<8)+temp[3];   // reassemble bytes into long
   return data;
 }
 
