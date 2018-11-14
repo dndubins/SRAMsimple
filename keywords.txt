@@ -1,0 +1,27 @@
+SRAMsimple	KEYWORD1
+SetMode	KEYWORD2
+WriteByte	KEYWORD2
+ReadByte	KEYWORD2
+WriteByteArray	KEYWORD2
+ReadByteArray	KEYWORD2
+WriteInt	KEYWORD2
+ReadInt	KEYWORD8
+WriteIntArray	KEYWORD2
+ReadIntArray	KEYWORD2
+WriteUnsignedInt	KEYWORD2
+ReadUnsignedInt	KEYWORD2
+WriteUnsignedIntArray	KEYWORD2
+ReadUnsignedIntArray	KEYWORD2
+WriteLong	KEYWORD2
+ReadLong	KEYWORD2
+WriteLongArray	KEYWORD2
+ReadLongArray	KEYWORD2
+WriteUnsignedLong	KEYWORD2
+ReadUnsignedLong	KEYWORD2
+WriteUnsignedLongArray	KEYWORD2
+ReadUnsignedLongArray	KEYWORD2
+WriteFloat	KEYWORD2
+ReadFloat	KEYWORD2
+WriteFloatArray	KEYWORD2
+ReadFloatArray	KEYWORD2
+
