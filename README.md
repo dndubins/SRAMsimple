@@ -9,7 +9,7 @@ Sample program to use a Serial SRAM chip to expand memory for an Arduino Uno giv
    (1) Arduino Uno
    (2) Microchip 23LC1024 SPI SRAM chip soldered on an Arduino Protoshield
 
-Function Properties:
+!Function Properties:
 
     void SetMode(byte CSpin, char Mode);
     void WriteByte(uint32_t address, byte data_byte);
