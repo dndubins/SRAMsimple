@@ -33,3 +33,14 @@ The functions available in the library include:
     void ReadFloatArray(uint32_t address, float *data, uint16_t big);
 
 To use the library, copy the download to the Library directory.
+
+Wiring the 23LC1024 to the Uno:
+   Pin1 (JSC) -- Pin 10 (CS) (with 10K pullup to +5V)
+   Pin2 (SO)  -- Pin 12 (MISO)
+   Pin3 (NU)  -- 10K -- +5V
+   Pin4 (GND) -- GND
+   Pin5 (SI)  -- Pin 11 (MOSI)
+   Pin6 (SCK) -- Pin 13 (SCK)
+   Pin7 (HOLD) -- 10K -- +5V
+   Pin8 (V+)  -- +5V
+
