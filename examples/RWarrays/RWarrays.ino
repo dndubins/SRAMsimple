@@ -15,13 +15,13 @@
    Wiring:
    23LC1024 - Uno:
    ---------------
-   Pin1 (JSC) -- Pin 10 (CS)
-   Pin2 (SO)  -- Pin 12 (MISO) (10K pullup to +5V)
-   Pin3 (NU)  -- 10K pullup to +5V
+   Pin1 (JSC) -- Pin 10 (CS) (with 10K pullup to +5V)
+   Pin2 (SO)  -- Pin 12 (MISO)
+   Pin3 (NU)  -- 10K -- +5V
    Pin4 (GND) -- GND
    Pin5 (SI)  -- Pin 11 (MOSI)
    Pin6 (SCK) -- Pin 13 (SCK)
-   Pin7 (HOLD) -- 10K pullup to +5V
+   Pin7 (HOLD) -- 10K -- +5V
    Pin8 (V+)  -- +5V
 */
 
