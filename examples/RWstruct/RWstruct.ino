@@ -45,9 +45,8 @@ void setup()
 
   union txUnion{
     chemElements organicA[4];
-	  byte byteArrA[sizeof(organicA)]; // byte array sharing the same space
+    byte byteArrA[sizeof(organicA)]; // byte array sharing the same space
   };
-
   union txUnion txData; // create a new union instance called txData
   
   // Fill objects with data
@@ -72,11 +71,10 @@ void setup()
   sram.WriteByteArray(0, txData.byteArrA, sizeof(txData.byteArrA));        // Write array to memory starting at address 0
 
 /************ Read a Sequence of Bytes from Memory into an Array **********/
-  union rxUnion{
+  union rxUnion{  // create a union for receiving data and reading as chemElements structure
     chemElements organicB[4];
-	  byte byteArrB[sizeof(organicB)]; // byte array sharing the same space
+    byte byteArrB[sizeof(organicB)]; // byte array sharing the same space
   };
-
   union rxUnion rxData; // create a new union instance called rxData
    
   Serial.println("Reading byte array using sequential: ");
