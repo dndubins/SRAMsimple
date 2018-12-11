@@ -1,13 +1,11 @@
-/* Example program for use with SRAMsimple.h - sending structures to 23LC1024 (**not tested yet**)
+/* Example program for use with SRAMsimple.h - sending structures to 23LC1024
     Arduino Uno Memory Expansion Sample Program
     Author: This headache belonged to David Dubins 12-Dec-18
     Library created and expanded by: D. Dubins 12-Nov-18
-
    Sample program to use a Serial SRAM chip to expand memory for an Arduino Uno
    giving access to an additional 128kB of random access memory.  The 23LC1024 uses
    the Serial Peripheral Interface (SPI) to transfer data and commands between the
    UNO and the memory chip.
-
    Used the following components:
    (1) Arduino Uno
    (2) Microchip 23LC1024 SPI SRAM chip soldered on an Arduino Protoshield
@@ -41,7 +39,7 @@ void setup()
     char atomName[10];
     int atomNum;
     float MW;
-  } organicA[4],organicB[4]; //declare organicA to send data and organicB to receive data
+  }; //declare organicA to send data and organicB to receive data
 
   union txUnion{
     chemElements organicA[4];
@@ -50,19 +48,19 @@ void setup()
   union txUnion txData; // create a new union instance called txData
   
   // Fill objects with data
-  txData.organicA[0].atomName[10]="Hydrogen";
+  strcpy(txData.organicA[0].atomName,"Hydrogen ");
   txData.organicA[0].atomNum=1;
   txData.organicA[0].MW=1.000794;
 
-  txData.organicA[1].atomName[10]="Carbon";
+  strcpy(txData.organicA[1].atomName,"Carbon   ");
   txData.organicA[1].atomNum=6;
   txData.organicA[1].MW=12.0107;
 
-  txData.organicA[2].atomName[10]="Nitrogen";
+  strcpy(txData.organicA[2].atomName,"Nitrogen ");
   txData.organicA[2].atomNum=7;
   txData.organicA[2].MW=14.0067;
 
-  txData.organicA[3].atomName[10]="Oxygen";
+  strcpy(txData.organicA[3].atomName,"Oxygen   ");
   txData.organicA[3].atomNum=8;
   txData.organicA[3].MW=15.9994;
   
@@ -81,7 +79,10 @@ void setup()
   sram.ReadByteArray(0, rxData.byteArrB, sizeof(rxData.byteArrB));   // Read array into byteArrB starting at address 0
 
   for(int i=0;i<4;i++){
-    Serial.println(rxData.organicB[i].atomName); // print received data
+    for(int j=0;j<sizeof(rxData.organicB[i].atomName);j++){
+      Serial.print(rxData.organicB[i].atomName[j]);
+    }
+    Serial.println("");
     Serial.println(rxData.organicB[i].atomNum); // print received data
     Serial.println(rxData.organicB[i].MW); // print received data
   }
