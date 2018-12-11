@@ -48,7 +48,7 @@ void setup()
 	  byte byteArrA[sizeof(organicA)]; // byte array sharing the same space
   };
 
-  union txUnion txData; // create a new union instance called data2go
+  union txUnion txData; // create a new union instance called txData
   
   // Fill objects with data
   txData.organicA[0].atomName[10]="Hydrogen";
@@ -77,13 +77,13 @@ void setup()
 	  byte byteArrB[sizeof(organicB)]; // byte array sharing the same space
   };
 
-  union rxUnion rxData; // create a new union instance called data2go
+  union rxUnion rxData; // create a new union instance called rxData
    
   Serial.println("Reading byte array using sequential: ");
-  sram.ReadByteArray(0, rxData.byteArrB, sizeof(rxData.byteArrB));   // Read array into read_data_a starting at address 0
+  sram.ReadByteArray(0, rxData.byteArrB, sizeof(rxData.byteArrB));   // Read array into byteArrB starting at address 0
 
   for(int i=0;i<4;i++){
-	  Serial.println(rxData.organicB[i].atomName); // print received data
+    Serial.println(rxData.organicB[i].atomName); // print received data
     Serial.println(rxData.organicB[i].atomNum); // print received data
     Serial.println(rxData.organicB[i].MW); // print received data
   }
