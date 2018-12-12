@@ -36,41 +36,41 @@ void setup()
   
   /*******************  Create a dummy structure and objects  ******************/
   struct chemElements {  // declaring a structured array
-    char atomName[10];
+    char atomName[10];   // size of largest length char array + 1 for null character
     int atomNum;
     float MW;
   }; //declare organicA to send data and organicB to receive data
 
   union txUnion{
-    chemElements organicA[4];
+    chemElements organicA[4]; // object organicA as an array of chemElements
     byte byteArrA[sizeof(organicA)]; // byte array sharing the same space
   };
   union txUnion txData; // create a new union instance called txData
   
   // Fill objects with data
-  strcpy(txData.organicA[0].atomName,"Hydrogen ");
+  strcpy(txData.organicA[0].atomName,"Hydrogen");
   txData.organicA[0].atomNum=1;
   txData.organicA[0].MW=1.000794;
 
-  strcpy(txData.organicA[1].atomName,"Carbon   ");
+  strcpy(txData.organicA[1].atomName,"Carbon");
   txData.organicA[1].atomNum=6;
   txData.organicA[1].MW=12.0107;
 
-  strcpy(txData.organicA[2].atomName,"Nitrogen ");
+  strcpy(txData.organicA[2].atomName,"Nitrogen");
   txData.organicA[2].atomNum=7;
   txData.organicA[2].MW=14.0067;
 
-  strcpy(txData.organicA[3].atomName,"Oxygen   ");
+  strcpy(txData.organicA[3].atomName,"Oxygen");
   txData.organicA[3].atomNum=8;
   txData.organicA[3].MW=15.9994;
   
 /************  Write a Sequence of Bytes from an Array *******************/
-  Serial.println("\nWriting byte array using Sequential: ");
+  Serial.println("\nWriting byte array using Sequential:");
   sram.WriteByteArray(0, txData.byteArrA, sizeof(txData.byteArrA));        // Write array to memory starting at address 0
 
 /************ Read a Sequence of Bytes from Memory into an Array **********/
   union rxUnion{  // create a union for receiving data and reading as chemElements structure
-    chemElements organicB[4];
+    chemElements organicB[4];  // object organicB as an array of chemElements
     byte byteArrB[sizeof(organicB)]; // byte array sharing the same space
   };
   union rxUnion rxData; // create a new union instance called rxData
@@ -79,12 +79,9 @@ void setup()
   sram.ReadByteArray(0, rxData.byteArrB, sizeof(rxData.byteArrB));   // Read array into byteArrB starting at address 0
 
   for(int i=0;i<4;i++){
-    for(int j=0;j<sizeof(rxData.organicB[i].atomName);j++){
-      Serial.print(rxData.organicB[i].atomName[j]);
-    }
-    Serial.println("");
-    Serial.println(rxData.organicB[i].atomNum); // print received data
-    Serial.println(rxData.organicB[i].MW); // print received data
+    Serial.println(rxData.organicB[i].atomName); // print received char array
+    Serial.println(rxData.organicB[i].atomNum); // print received int
+    Serial.println(rxData.organicB[i].MW,4); // print received float
   }
 }
 
