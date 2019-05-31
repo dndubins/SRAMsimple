@@ -5,7 +5,7 @@ ReadByte	KEYWORD2
 WriteByteArray	KEYWORD2
 ReadByteArray	KEYWORD2
 WriteInt	KEYWORD2
-ReadInt	KEYWORD8
+ReadInt	KEYWORD2
 WriteIntArray	KEYWORD2
 ReadIntArray	KEYWORD2
 WriteUnsignedInt	KEYWORD2
