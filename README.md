@@ -33,7 +33,7 @@ Function Properties:
     void WriteUnsignedLong(uint32_t address, unsigned long data);
     unsigned long ReadUnsignedLong(uint32_t address);
     void WriteUnsignedLongArray(uint32_t address, unsigned long *data, uint16_t big);
-    void SRAMsimple::ReadUnsignedLongArray(uint32_t address, unsigned long *data, uint16_t big);
+    void ReadUnsignedLongArray(uint32_t address, unsigned long *data, uint16_t big);
     void WriteFloat(uint32_t address, float data);
     float ReadFloat(uint32_t address);
     void WriteFloatArray(uint32_t address, float *data, uint16_t big);
