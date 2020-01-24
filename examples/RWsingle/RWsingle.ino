@@ -90,9 +90,9 @@ void setup()
   sram.WriteUnsignedLong(0, tempUnsignedLong1);        // send tempUnsignedLong1 to SRAM starting from address 0
 
 /************ Read Unsigned Long from Memory **********/
-  Serial.println("Reading long using sequential: ");
-  long tempUnsignedLong2=sram.ReadUnsignedLong(0);  // Read unsigned long from memory address 0
-  Serial.println(tempUnsignedLong2);                   // print as long
+  Serial.println("Reading unsigned long using sequential: ");
+  unsigned long tempUnsignedLong2=sram.ReadUnsignedLong(0);  // Read unsigned long from memory address 0
+  Serial.println(tempUnsignedLong2);                   // print as unsigned long
 
 /************  Write a Float using Sequential *******************/
   Serial.println("\nWriting float using sequential: ");
