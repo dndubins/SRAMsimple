@@ -87,12 +87,12 @@ void setup()
 /************  Write Unsigned Long *******************/
   Serial.println("\nWriting unsigned long using sequential: ");
   long tempUnsignedLong1=4294967295;           // highest unsigned long #
-  sram.WriteUnsignedLong(0, tempLong1);        // send tempUnsignedLong1 to SRAM starting from address 0
+  sram.WriteUnsignedLong(0, tempUnsignedLong1);        // send tempUnsignedLong1 to SRAM starting from address 0
 
 /************ Read Unsigned Long from Memory **********/
   Serial.println("Reading long using sequential: ");
   long tempUnsignedLong2=sram.ReadUnsignedLong(0);  // Read unsigned long from memory address 0
-  Serial.println(tempLong2);                   // print as long
+  Serial.println(tempUnsignedLong2);                   // print as long
 
 /************  Write a Float using Sequential *******************/
   Serial.println("\nWriting float using sequential: ");
