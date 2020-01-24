@@ -390,7 +390,7 @@ float SRAMsimple::ReadFloat(uint32_t address){
   return data;                                    // https://www.microchip.com/forums/m590535.aspx
 }
 
-/*********** Write and Read a Long Array ************************/
+/*********** Write and Read a Float Array ************************/
 void SRAMsimple::WriteFloatArray(uint32_t address, float *data, uint16_t big){
   byte holder[big*4]; 				  // temporary array of bytes with 2 elements
   uint16_t j=0;
